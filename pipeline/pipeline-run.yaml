@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: stt-be-pipeline-run-
+spec:
+  serviceAccountName: build-bot
+  pipelineRef:
+    name: stt-be-pipeline
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: yasuki-oshiro-pvc
