@@ -54,7 +54,7 @@ spec:
           #   timeoutSeconds: 1
           name: stt-be
           ports:
-            - containerPort: 3000
+            - containerPort: 3001
               name: http
               protocol: TCP
           # readinessProbe:
