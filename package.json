@@ -3,11 +3,41 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "eslint": "eslint --fix src/"
   },
   "dependencies": {
-    "next": "latest",
+    "@linaria/babel-preset": "^3.0.0-beta.15",
+    "@linaria/core": "^3.0.0-beta.15",
+    "@linaria/react": "^3.0.0-beta.15",
+    "@linaria/shaker": "^3.0.0-beta.15",
+    "axios": "^0.25.0",
+    "carbon-components": "^10.51.0",
+    "carbon-components-react": "^7.51.0",
+    "carbon-icons": "^7.0.7",
+    "dotenv": "^14.3.2",
+    "linaria": "^3.0.0-beta.17",
+    "next": "^12.0.9",
+    "next-linaria": "^0.11.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-loader-spinner": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@types/carbon-components-react": "^7.49.0",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.0",
+    "typescript": "^4.5.5"
   }
 }
