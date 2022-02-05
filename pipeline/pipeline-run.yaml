@@ -1,11 +1,11 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: stt-be-pipeline-run-
+  generateName: stt-fe-pipeline-run-
 spec:
   serviceAccountName: build-bot
   pipelineRef:
-    name: stt-be-pipeline
+    name: stt-fe-pipeline
   workspaces:
     - name: pipeline-shared-data
       persistentVolumeClaim:

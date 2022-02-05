@@ -2,18 +2,18 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: stt-be
-    app.kubernetes.io/instance: stt-be
-    app.kubernetes.io/name: stt-be
-  name: stt-be
+    app: stt-fe
+    app.kubernetes.io/instance: stt-fe
+    app.kubernetes.io/name: stt-fe
+  name: stt-fe
 spec:
   ports:
     - name: http
       port: 80
       protocol: TCP
-      targetPort: 3000
+      targetPort: 3001
   selector:
-    app.kubernetes.io/instance: stt-be
-    app.kubernetes.io/name: stt-be
+    app.kubernetes.io/instance: stt-fe
+    app.kubernetes.io/name: stt-fe
   sessionAffinity: None
   type: ClusterIP

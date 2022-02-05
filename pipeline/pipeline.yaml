@@ -3,7 +3,7 @@ kind: Pipeline
 metadata:
   annotations:
     app.openshift.io/runtime: nodejs
-  name: stt-be-pipeline
+  name: stt-fe-pipeline
 spec:
   workspaces:
     - name: pipeline-shared-data
@@ -13,12 +13,12 @@ spec:
     - name: image-repo
       type: string
       description: Docker image name
-      default: quay.io/yasuki_oshiro_ibm/be-stt
+      default: quay.io/yasuki_oshiro_ibm/fe-stt
   tasks:
     - name: clone-repository
       params:
         - name: url
-          value: https://github.com/yasuki0707/be-stt.git
+          value: https://github.com/yasuki0707/fe-stt.git
       taskRef:
         kind: Task
         name: git-clone
@@ -66,7 +66,7 @@ spec:
         - build-image
       params:
         - name: image-with-tag
-          value: 'quay.io/yasuki_oshiro_ibm/be-stt=$(params.image-repo):$(tasks.clone-repository.results.commit)'
+          value: 'quay.io/yasuki_oshiro_ibm/fe-stt=$(params.image-repo):$(tasks.clone-repository.results.commit)'
       taskRef:
         kind: Task
         name: kustomize-build
@@ -80,7 +80,7 @@ spec:
         - name: app-namespace
           value: yasu
         - name: app-name
-          value: stt-be-pipeline
+          value: stt-fe-pipeline
       taskRef:
         kind: Task
         name: test-deploy

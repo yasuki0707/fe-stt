@@ -3,45 +3,35 @@ kind: Deployment
 metadata:
   annotations:
     app.openshift.io/vcs-ref: f7580aa1eb6f7176705176e201ecff4de93edafb
-    app.openshift.io/vcs-uri: https://github.com/yasuki0707/be-stt.git
+    app.openshift.io/vcs-uri: https://github.com/yasuki0707/fe-stt.git
   labels:
-    app: stt-be
-    app.kubernetes.io/instance: stt-be
-    app.kubernetes.io/name: stt-be
+    app: stt-fe
+    app.kubernetes.io/instance: stt-fe
+    app.kubernetes.io/name: stt-fe
     app.openshift.io/runtime: js
-  name: stt-be
+  name: stt-fe
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app.kubernetes.io/instance: stt-be
-      app.kubernetes.io/name: stt-be
+      app.kubernetes.io/instance: stt-fe
+      app.kubernetes.io/name: stt-fe
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app.kubernetes.io/instance: stt-be
-        app.kubernetes.io/name: stt-be
+        app.kubernetes.io/instance: stt-fe
+        app.kubernetes.io/name: stt-fe
     spec:
       containers:
         - env:
             - name: INGRESS_HOST
             - name: PROTOCOLS
-            - name: LOG_LEVEL
-              value: debug
-            - name: API_KEY_STT
-              valueFrom:
-                secretKeyRef:
-                  name: stt-api-secret
-                  key: API_KEY_STT
-            - name: API_ENDPOINT_STT
-              valueFrom:
-                secretKeyRef:
-                  name: stt-api-secret
-                  key: API_ENDPOINT_STT
-          image: quay.io/yasuki_oshiro_ibm/be-stt
+            - name: FE_PROFILE
+              value: prod
+          image: quay.io/yasuki_oshiro_ibm/fe-stt
           imagePullPolicy: IfNotPresent
           # livenessProbe:
           #   failureThreshold: 3
@@ -52,7 +42,7 @@ spec:
           #   periodSeconds: 10
           #   successThreshold: 1
           #   timeoutSeconds: 1
-          name: stt-be
+          name: stt-fe
           ports:
             - containerPort: 3001
               name: http
@@ -76,4 +66,4 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       imagePullSecrets:
-        - name: quay-io-stt-be-password
+        - name: quay-io-stt-fe-password
