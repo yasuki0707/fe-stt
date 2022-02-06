@@ -13,6 +13,6 @@ export const get = async <T>(path: string, config?: any): Promise<IApiResponse<T
     console.log(res);
     return { data: res.data, code: 200 };
   } catch (e) {
-    return { data: '', code: 500 };
+    return { data: {} as any, code: 500 };
   }
 };

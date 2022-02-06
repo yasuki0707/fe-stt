@@ -24,7 +24,7 @@ export const Result = ({ results }: { results: TSearchResult }) => {
         return (
           <div key={i}>
             抽出ワード: <span style={{ fontWeight: 'bold' }}>{x}</span>
-            {fixedResults[x].map((_, j) => (
+            {fixedResults[x].map((_: any, j: number) => (
               <div key={j}>
                 <Tile
                   pos={fixedResults[x][j].pos}
