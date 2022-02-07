@@ -1,7 +1,7 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
-  name: stt-be-pipeline-triggerbinding
+  name: stt-fe-pipeline-triggerbinding
 spec:
   params:
     - name: namespace

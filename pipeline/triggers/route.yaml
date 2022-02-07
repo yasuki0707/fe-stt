@@ -1,11 +1,11 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: stt-be-el-route
+  name: stt-fe-el-route
 spec:
   port:
     targetPort: http-listener
   to:
     kind: Service
-    name: el-stt-be
+    name: el-stt-fe
     weight: 100

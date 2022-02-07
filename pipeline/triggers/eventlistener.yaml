@@ -1,14 +1,14 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: EventListener
 metadata:
-  name: stt-be
+  name: stt-fe
 spec:
   serviceAccountName: tekton-triggers-sa
   triggers:
     - template:
-        ref: stt-be-triggertemplate
+        ref: stt-fe-triggertemplate
       bindings:
-        - ref: stt-be-pipeline-triggerbinding
+        - ref: stt-fe-pipeline-triggerbinding
       interceptors:
         - github:
             eventTypes: ['push']
