@@ -66,4 +66,4 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       imagePullSecrets:
-        - name: quay-io-stt-fe-password
+        - name: quay-io-stt-be-password
