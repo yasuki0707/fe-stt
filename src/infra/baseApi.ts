@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
 export const get = async <T>(path: string, config?: any): Promise<IApiResponse<T>> => {
   try {
     const res = await axiosInstance.get<T>(path, config);
-    console.log(res);
+    // console.log(res);
     return { data: res.data, code: 200 };
   } catch (e) {
     return { data: {} as any, code: 500 };
