@@ -15,4 +15,4 @@ spec:
         workspaces:
           - name: pipeline-shared-data
             persistentVolumeClaim:
-              claimName: yasuki-oshiro-pvc
+              claimName: yasuki-oshiro-fe-pvc
