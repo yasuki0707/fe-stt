@@ -16,3 +16,13 @@ export const get = async <T>(path: string, config?: any): Promise<IApiResponse<T
     return { data: {} as any, code: 500 };
   }
 };
+
+export const post = async <T>(path: string, form: FormData, config?: any): Promise<IApiResponse<T>> => {
+  try {
+    const res = await axiosInstance.post<T>(path, form, config);
+    // console.log(res);
+    return { data: res.data, code: 200 };
+  } catch (e) {
+    return { data: {} as any, code: 500 };
+  }
+};
