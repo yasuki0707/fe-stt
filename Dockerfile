@@ -7,7 +7,7 @@ RUN npm run build
 
 FROM node:12-alpine
 WORKDIR /usr/src/app
-COPY --from=build package*.json ./
+COPY --from=build /usr/src/app/package*.json /usr/src/app/
 RUN npm install --production
 # --cache /tmp/empty-cache && rm -rf /tmp/empty-cache
 COPY --from=build /usr/src/app/.next /usr/src/app/.next
