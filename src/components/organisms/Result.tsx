@@ -6,6 +6,9 @@ import { TSearchResult } from '@/types/apis/searchResult';
 
 export const Result = ({ results }: { results: TSearchResult }) => {
   // TODO: 整形
+  if (!results.processedText) {
+    return <>オーディオファイルをテキストに変換できませんでした</>;
+  }
   if (!results.processedText.length) {
     return <>抽出結果がありません</>;
   }
