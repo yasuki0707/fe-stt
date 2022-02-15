@@ -20,7 +20,7 @@ export const LanguageSelect = ({
       <RadioButtonGroup {...props}>
         <RadioButton labelText="日本語" value="ja" id="ja" />
         <RadioButton labelText="英語" value="en" id="en" />
-        {/* <RadioButton labelText="アラビア語" value="ar" id="ar" /> */}
+        <RadioButton labelText="アラビア語" value="ar" id="ar" />
       </RadioButtonGroup>
     </Wrapper>
   );
