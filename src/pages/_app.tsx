@@ -1,4 +1,4 @@
-import 'carbon-components/scss/globals/scss/styles.scss';
+import 'carbon-components/css/carbon-components.min.css';
 import App, { AppProps, AppContext } from 'next/app';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
